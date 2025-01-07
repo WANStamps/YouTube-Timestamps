@@ -85,3 +85,9 @@ Want to improve the extension itself? Great! The extension is built with vanilla
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+## Important links  
+
+- [Reddit thread](https://old.reddit.com/r/LinusTechTips/comments/1hw49rm/wan_stamps_chrome_extension_for_when_the/)
+- [WAN Show Chapters doc](https://docs.google.com/document/d/1R8f1IILzJV-xH6LP7Npj5PNgrI8DquxicFjZOxJvQgI/edit?tab=t.0)
