@@ -1,6 +1,10 @@
 const GITHUB_REPO = "WANStamps/YouTube-Timestamps";
 const GITHUB_BRANCH = "main";
 
+let timestampsContainer;
+let timestampsIcon;
+let stickyTimestamps;
+
 async function getVideoId() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get("v");
@@ -79,16 +83,13 @@ function parseMarkdownWithFrontmatter(content) {
 }
 
 function createTimestampsUI(result, videoId) {
-    const container = document.createElement("div");
-    container.className = "sticky-timestamps";
-
     console.log(`Creating timestamp UI,`, result, videoId);
 
     // Add source indicator
     const sourceIndicator = document.createElement("div");
     sourceIndicator.className = "timestamps-source";
     sourceIndicator.textContent = `Source: ${result.source}`;
-    container.appendChild(sourceIndicator);
+    stickyTimestamps.appendChild(sourceIndicator);
 
     // Add header with metadata
     if (result.data.metadata && result.data.metadata.submitters) {
@@ -111,7 +112,7 @@ function createTimestampsUI(result, videoId) {
         });
 
         header.innerHTML = headerContent;
-        container.appendChild(header);
+        stickyTimestamps.appendChild(header);
     }
 
     // Add content
@@ -151,8 +152,7 @@ function createTimestampsUI(result, videoId) {
         content.appendChild(div);
     });
 
-    container.appendChild(content);
-    return container;
+    stickyTimestamps.appendChild(content);
 }
 
 function seekToTimestamp(seconds) {
@@ -174,45 +174,87 @@ function convertTimeToSeconds(timeString) {
     return seconds;
 }
 
-function addErrorMessage(message) {
+function showError(message) {
     console.error(message);
-    const container = document.createElement("div");
-    container.className = "sticky-timestamps";
-
     const error = document.createElement("div");
     error.className = "timestamps-error";
     error.textContent = message;
+    stickyTimestamps.appendChild(error);
+}
 
-    container.appendChild(error);
-    document.body.appendChild(container);
+function createTimestampsIcon() {
+    timestampsContainer = document.createElement('div');
+    timestampsContainer.className = 'timestamps-container';
+
+    timestampsIcon = document.createElement('div');
+    timestampsIcon.className = 'timestamps-icon loading';
+    timestampsIcon.innerHTML = '&#8635;'; // Loading spinner symbol
+
+    stickyTimestamps = document.createElement('div');
+    stickyTimestamps.className = 'sticky-timestamps';
+
+    timestampsContainer.appendChild(timestampsIcon);
+    timestampsContainer.appendChild(stickyTimestamps);
+    document.body.appendChild(timestampsContainer);
+
+    timestampsIcon.addEventListener('click', toggleTimestamps);
+}
+
+function toggleTimestamps() {
+    stickyTimestamps.classList.toggle('expanded');
+}
+
+function updateTimestampsIcon(hasTimestamps) {
+    timestampsIcon.classList.remove('loading');
+    if (hasTimestamps) {
+        timestampsIcon.innerHTML = '&#10003;'; // Checkmark
+        stickyTimestamps.classList.add('expanded');
+    } else {
+        timestampsIcon.innerHTML = '&#33;'; // Exclamation mark
+    }
+}
+
+function addCollapseButton() {
+    const collapseButton = document.createElement('button');
+    collapseButton.className = 'collapse-button';
+    collapseButton.innerHTML = '&times;'; // × symbol
+    collapseButton.addEventListener('click', toggleTimestamps);
+    stickyTimestamps.appendChild(collapseButton);
 }
 
 async function init() {
     console.log('Initializing YT Timestamps');
     // Remove any existing timestamps
-    const existing = document.querySelector(".sticky-timestamps");
+    const existing = document.querySelector(".timestamps-container");
     if (existing) {
         existing.remove();
     }
 
+    createTimestampsIcon();
+
     const videoId = await getVideoId();
-    if (!videoId)  {
-        addErrorMessage('No video ID found');
+    if (!videoId) {
+        updateTimestampsIcon(false);
+        showError('No video ID found');
         return;
     }
 
     console.log(`Found video ID: ${videoId} from URL parameters or current URL. Fetching timestamps...`);
 
-    const timestamps = await getTimestamps(videoId);
-    if (!timestamps) {
-        addErrorMessage("No timestamps found for this video.");
-        return;
+    try {
+        const timestamps = await getTimestamps(videoId);
+        if (timestamps) {
+            updateTimestampsIcon(true);
+            createTimestampsUI(timestamps, videoId);
+            addCollapseButton();
+        } else {
+            updateTimestampsIcon(false);
+            showError("No timestamps found for this video.");
+        }
+    } catch (error) {
+        updateTimestampsIcon(false);
+        showError('Error fetching timestamps: ' + error.message);
     }
-
-    console.log(`Found timestamp data:`, timestamps);
-
-    const timestampsUI = createTimestampsUI(timestamps, videoId);
-    document.body.appendChild(timestampsUI);
 }
 
 // Watch for navigation events (YouTube is a SPA)

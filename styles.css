@@ -1,19 +1,61 @@
-.sticky-timestamps {
+.timestamps-container {
     position: fixed;
-    left: 0;
-    top: 60px;
+    left: 20px;
+    top: 80px;
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+.timestamps-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+.timestamps-icon.loading {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sticky-timestamps {
+    display: none;
     width: 400px;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 80px);
     background: rgba(0,0,0,0.8);
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
     padding: 20px;
     overflow-y: auto;
-    z-index: 9999;
     font-family: monospace;
     font-size: 14px;
     line-height: 1.4;
     white-space: pre-wrap;
     color: #fff;
+}
+
+.sticky-timestamps.expanded {
+    display: block;
+}
+
+.collapse-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 .sticky-timestamps:not(:hover) {
     opacity: 0.8;
