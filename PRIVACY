@@ -1,0 +1,27 @@
+# Privacy Policy
+
+## Data Collection and Usage
+
+The YouTube WAN Show Timestamps extension:
+- Does not collect any personal data
+- Does not track user behavior
+- Does not store any information locally
+- Does not share any data with third parties
+
+The only external data interaction is fetching timestamp data from GitHub's public API for the video you are currently watching.
+
+## GitHub API Usage
+When you watch a YouTube video, the extension:
+1. Checks if timestamp data exists for that video
+2. If it exists, fetches the timestamp data from our public GitHub repository
+3. Displays these timestamps alongside your video
+
+No information about you or your viewing habits is sent to GitHub or anywhere else.
+
+## Updates
+If our data handling practices change, we will update this privacy policy accordingly.
+
+## Contact
+If you have any questions about this privacy policy, you can open an issue on our GitHub repository.
+
+Last updated: January 2024
