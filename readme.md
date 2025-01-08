@@ -12,6 +12,12 @@ A Chrome extension that adds community-contributed timestamps to YouTube videos.
 
 ## Installation
 
+
+[![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/wan-show-timestamps/)
+<!-- [![Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)](https://chrome.google.com/webstore/detail/your-extension-id-here) -->
+
+## Manual installation
+
 1. Clone this repository or download the latest release
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" in the top right
