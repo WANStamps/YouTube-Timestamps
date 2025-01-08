@@ -45,6 +45,7 @@
 
 .timestamp-line:hover {
     background: #f0f0f0;
+    color: #000;
 }
 
 .timestamps-error {
