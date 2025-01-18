@@ -124,6 +124,12 @@ function createTimestampsUI(result, videoId) {
     lines.forEach(line => {
         const div = document.createElement("div");
         div.className = "timestamp-line";
+        if(!line || !line.trim() || !line.trim().length) {
+            return; // Skip empty lines
+        }
+        if(line.trim() === '```') {
+            return; // Skip code blocks
+        }
 
         // Extract timestamp if present
         const timeMatch = line.match(/\[(\d+:\d+(?::\d+)?)\]|>\s*(\d+:\d+(?::\d+)?)/);
