@@ -92,6 +92,12 @@
     color: #000;
 }
 
+.timestamp-line.current-timestamp {
+    font-weight: bold;
+    background: #009688;
+    color: #fff;
+}
+
 .timestamps-error {
     color: #d32f2f;
     padding: 16px;

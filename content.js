@@ -137,6 +137,9 @@ function createTimestampsUI(result, videoId) {
             const timestamp = timeMatch[1] || timeMatch[2];
             const seconds = convertTimeToSeconds(timestamp);
 
+            // Set data-seconds attr on div
+            div.setAttribute('data-seconds', ''+seconds);
+
             // Create a clickable span instead of an anchor
             const timeLink = document.createElement('span');
             timeLink.className = "yt-core-attributed-string__link yt-core-attributed-string__link--call-to-action-color";
@@ -159,6 +162,8 @@ function createTimestampsUI(result, videoId) {
     });
 
     stickyTimestamps.appendChild(content);
+
+    setInterval(updateCurrentTimestamp, 1000);
 }
 
 function seekToTimestamp(seconds) {
@@ -169,6 +174,40 @@ function seekToTimestamp(seconds) {
         return;
     }
     video.currentTime = seconds;
+
+    updateCurrentTimestamp();
+}
+
+function updateCurrentTimestamp() {
+    const video = document.querySelector('video');
+    if (!video) {
+        console.error("No YouTube player found");
+        return;
+    }
+
+    const currentTime = video.currentTime;
+
+    // Get all timestamp lines
+    const timestampLines = document.querySelectorAll('.timestamp-line[data-seconds]');
+
+    // Remove current-timestamp class from any existing elements
+    document.querySelector('.timestamp-line.current-timestamp')?.classList.remove('current-timestamp');
+
+    // Find the timestamp line that's closest to but not after currentTime
+    let currentLine = null;
+    for (const line of timestampLines) {
+        const seconds = parseInt(line.dataset.seconds);
+        if (seconds <= currentTime) {
+            currentLine = line;
+        } else {
+            break;
+        }
+    }
+
+    // Add current-timestamp class to the found line
+    if (currentLine) {
+        currentLine.classList.add('current-timestamp');
+    }
 }
 
 function convertTimeToSeconds(timeString) {
