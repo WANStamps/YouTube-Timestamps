@@ -4,7 +4,7 @@
     top: 80px;
     z-index: 9999;
     transition: all 0.3s ease;
-    max-height: calc(100vh - 160px);
+    max-height: calc(75vh - 160px);
 }
 
 .timestamps-icon {
@@ -32,7 +32,7 @@
 .sticky-timestamps {
     display: none;
     width: 400px;
-    height: calc(100vh - 192px);
+    height: calc(75vh - 32px - 160px);
     background: rgba(0,0,0,0.8);
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
     padding: 20px;
@@ -42,7 +42,7 @@
     line-height: 1.4;
     white-space: pre-wrap;
     color: #fff;
-    max-height: calc(100vh - 192px);
+    max-height: calc(75vh - 32px - 160px);
 }
 
 .sticky-timestamps.expanded {
