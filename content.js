@@ -132,7 +132,7 @@ function createTimestampsUI(result, videoId) {
         }
 
         // Extract timestamp if present
-        const timeMatch = line.match(/\[(\d+:\d+(?::\d+)?)\]|>\s*(\d+:\d+(?::\d+)?)/);
+        const timeMatch = line.match(/(?:^|\s)(?:[^\w\s])?(\d+:\d+(?::\d+)?)(?:[^\w\s])?(?=\s|$)/);
         if (timeMatch) {
             const timestamp = timeMatch[1] || timeMatch[2];
             const seconds = convertTimeToSeconds(timestamp);
