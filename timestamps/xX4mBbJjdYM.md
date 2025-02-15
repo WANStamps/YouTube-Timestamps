@@ -1,51 +1,77 @@
 ---
 submitters:
-  - name: "@LazeJanev"
+  - name: "@NoKi1119"
+    url: "https://www.youtube.com/@NoKi1119"
 ---
 ```
-00:00 - Show Introduction
-02:09 - Headline Topic: Shipping and Tariff Updates
-11:00 - Framework's New Risk 5 Main Board ️
-15:24 - Crypto Schemes and Ethical Dilemmas
-19:04 - The Moral Quandaries of Launching a VPN ️‍️
-24:45 - Conceptualizing an Ethical ICO
-30:38 - Ethical Concerns in Cryptocurrency
-34:02 - Unexpected Discoveries of Meme Coins
-36:00 - Exciting Updates on LTT Merch and Gym ️
-45:54 - Angry Email Story
-48:00 - Channel Super Fun Moments
-54:40 - Thoughts on Future of Tech Channels
-1:01:25 - Graphics Card Pricing Issues
-1:06:18 - Supply Chain Challenges and Market Dynamics
-1:14:01 - The Future of Tech Reviewers and Consumer Access
-1:16:43 - GPU Pricing Update
-1:19:44 - Changing Perceptions in Tech
-1:25:31 - Navigating Apathy and Engagement
-1:31:54 - Reflecting on Two Decades ️
-1:37:10 - The Rise of Tech Content Creation
-1:42:45 - Exploring Future Business Ventures
-1:47:06 - Setting Goals and Expectations
-1:51:43 - The Power of Squarespace for Website Building
-1:55:48 - Managing News Consumption and Information Overload
-2:02:29 - Sponsorship Strategy Discussion
-2:06:05 - Launching New Yoga Pants Product
-2:09:02 - Tech and Gaming Card Updates
-2:18:05 - Encryption Services Debate
-2:19:39 - AMD Outsells Intel in Data Center
-2:22:47 - Rooster Teeth Revival and Ownership Changes
-2:33:25 - Weight Loss and Wisdom Teeth
-2:34:58 - The Surprising Cost of Private Jets ️
-2:36:51 - The Challenges of Owning an Aircraft ️
-2:48:40 - Picture Taking and Privacy Concerns
-2:52:58 - Limitations of Modifying Planes ️
-2:54:00 - Discussion on Buying a Yacht
-3:04:06 - Exploring the Luxe Boat
-3:06:07 - Discussing Power Needs and Sponsorship
-3:17:00 - Advice for First-Time Micro Center Visitors
-3:19:37 - Server vs. Consumer Products
-3:22:29 - Thoughts on Smart Home Tech
-3:24:43 - Factory Tours and Future Projects
-3:34:58 - Movie Recommendations
-3:35:34 - Discussion on Stalker Games
-3:37:45 - Closing Remarks and Goodbye
+[0:00] Chapters.
+[1:36] Intro.
+[2:08] Topic #1: LTTStore shipments to resume despite tariffs.
+   > 4:47 Discussing the issue & chaos, company layoffs.
+[10:58] Topic #2: Framework's RISC-V mainboard collab.
+   > 12:49 Investment, crypto, throw morals out if LMG struggles? VPN.
+   > 21:10 Crypto risks, Luke wants people to relax, delayed shipments.
+   > 23:45 Coffeezilla collab to make the "most ethical $h!tcoin"?
+   > 27:26 Channel points, Dan on rug pulls, a possible utility?
+[33:32] Merch Messages #1 ft. "Is DropCoin real?" Dan's portfolio ruined.
+   > 36:17 Will there be a V2 of the LTT backpack?
+   > 39:20 "I'm over it" hits close ft. LMG reunion, Luke's brother, Pokemon.
+[58:41] Topic #2: Nvidia RTX 50X0's abysmal release due to low stock.
+   > 1:02:27 AIBs rising prices, "We're going to be okay" - Luke 2K25.
+   > 1:04:31 Why release with such a low stock?
+   > 1:06:27 Will Linus buy an RTX 50X0? Looking at sold eBay cards.
+[1:13:14] Topic #3: Anger targeted at tech channels due to the market.
+   > 1:15:55 Plouffe gave his 4090 for reviews, past LTT expensive projects.
+   > 1:19:46 Recalling LMG buyout offer, apathy towards tech pricing.
+   > 1:21:57 The lower end mattered, Linus on second-hand tech backlash.
+   > 1:25:22 Why can't LTT do affordable builds, Apple's Mac Minis.
+   > 1:28:10 "Why focus on hate despite consistent views?"
+   > 1:31:49 Luke asks what would LTT do in 12 years.
+   > 1:34:22 Luke teases an upcoming video, Linus on LMG's scale.
+   > 1:37:50 Tech yacht, LMG checks hasn't ever been late, boat ideas.
+   > 1:45:35 PSU Circuit, AI voice, Linus addicted to reading comments.
+[1:50:38] Sponsors.
+   > 1:50:42 Squarespace.
+   > 1:51:46 Vessi.
+   > 1:52:48 DeleteMe.
+[1:53:56] Merch Messages #2.
+   > 1:54:07 Why does avoiding news feel wrong?
+   > 1:58:37 More LTTStore women underwear?
+   > 2:07:10 How does UPS clean up ethernet and coaxial cable?
+   > 2:10:47 Odds on Nvidia shield 2 happening?
+[2:15:54] Topic #4: UK won't change laws around games digital shutdown.
+[2:16:51] Topic #5: UK demands access to Apple's encrypted data.
+[2:19:36] Topic #6: AMD outsells Nvidia in data center sales.
+[2:20:49] Topic #7: Rooster Teeth revived after Bernie buys it.
+   > 2:21:48 Would Linus re-purchase LMG to revive it? ft. "Power Man."
+[2:26:45] Topic #8: Google's update ruins 4a's battery life.
+   > 2:27:48 Google offers free battery replacement or credits.
+[2:28:44] Topic #9: LTT bottle lid on non-LTT bottle.
+[2:31:16] LTT tech plane.
+   > 2:33:51 Relative affordability of a jet, Vancouver housing.
+   > 2:35:58 Tech plane might be dead, Linus's cool uncle.
+   > 2:39:22 Parts availability, "a jet will help your son's dating game."
+   > 2:42:55 Operation costs, using a private plane over commercial.
+   > 2:51:04 Plane modifications are very limited and must be certified.
+   > 2:53:18 Tech yacht, "I'll unsubscribe if you buy it," business.
+   > 3:00:44 Dan & Luke try to get Linus to talk to the yacht guy.
+   > 3:05:45 Power consumption, sea cooling, scale of the yacht.
+   > 3:10:46 Dry docking, AJ would move in, wife approval factor.
+   > 3:14:49 "Boats get you laid," Luke on cargo planes.
+[3:16:22] Merch Messages #3 ft. After Dark.
+   > 3:16:48 Recommendations for first Microcenter visit?
+   > 3:18:27 "Segue to our sponsor" becoming an obnoxious catchphrase?
+   > 3:19:19 Why are server chassis so expensive?
+   > 3:20:34 How do you decide which LTTStore item stay on the store?
+   > 3:21:24 Thoughts on Eight Sleep removing features after purchase?
+   > 3:23:01 Any cool tours Luke gone to recently or have scheduled?
+   > 3:26:35 Recommendations to replace Harmony?
+   > 3:27:44 Advice for someone new to a new leadership position?
+   > 3:28:22 Linus's on the Samsung S25.
+   > 3:28:46 Why aren't CPUs and motherboards sold together?
+   > 3:30:18 Is Linus still using his ASUS 27" 4K monitor?
+   > 3:32:16 What color would Linus paint a JDM Subaru Legacy?
+   > 3:33:55 Linus's thoughts on How to Train your Dragon live action?
+   > 3:35:31 Has Linus tried S.T.A.L.K.E.R.?
+[3:37:38] Outro.
 ```
