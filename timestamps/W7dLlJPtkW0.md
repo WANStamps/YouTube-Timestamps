@@ -41,7 +41,7 @@ submitters:
 [2:06:27] Topic #6: Lawmakers attempting? to kill off Section 230 
 [2:09:28] Topic #7: Plex under fire for policy and price changes
    > 2:20:26 Plex Legal Liability?
-[2:23:56] Topic #8: New God of War TV showrunner is not a gamer
+[2:25:56] Topic #8: New God of War TV showrunner is not a gamer
    >  2:39:12 Non-fans making great franchise content
 [2:42:25] Topic #9: Xbox UI with Steam button posted
 [2:43:12] Topic #10: Roku experiments with ads before homescreen
