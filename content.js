@@ -147,8 +147,36 @@ function createTimestampsUI(result, videoId) {
             timeLink.textContent = timeMatch[0];
 
             // Add click handler to seek video
-            timeLink.addEventListener('click', () => {
+            timeLink.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the div click handler from firing
                 seekToTimestamp(seconds);
+            });
+
+            // Add click handler to the entire div
+            div.addEventListener('click', (e) => {
+                const rect = div.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const lineWidth = rect.width;
+                const clickPercentage = clickX / lineWidth;
+
+                // Find the next timestamp if it exists
+                const timestampLines = document.querySelectorAll('.timestamp-line[data-seconds]');
+                const currentIndex = Array.from(timestampLines).indexOf(div);
+
+                if (currentIndex < timestampLines.length - 1) {
+                    const nextLine = timestampLines[currentIndex + 1];
+                    const currentSeconds = parseInt(div.dataset.seconds);
+                    const nextSeconds = parseInt(nextLine.dataset.seconds);
+
+                    // Calculate target time based on click position
+                    const totalDuration = nextSeconds - currentSeconds;
+                    const targetTime = currentSeconds + (totalDuration * clickPercentage);
+
+                    seekToTimestamp(targetTime);
+                } else {
+                    // If there's no next timestamp, just seek to this timestamp
+                    seekToTimestamp(seconds);
+                }
             });
 
             // Replace the timestamp text with our clickable span
