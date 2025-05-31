@@ -190,15 +190,23 @@ function updateCurrentTimestamp() {
     // Get all timestamp lines
     const timestampLines = document.querySelectorAll('.timestamp-line[data-seconds]');
 
-    // Remove current-timestamp class from any existing elements
-    document.querySelector('.timestamp-line.current-timestamp')?.classList.remove('current-timestamp');
+    // Remove current-timestamp class and progress bar from any existing elements
+    const previousCurrentLine = document.querySelector('.timestamp-line.current-timestamp');
+    if (previousCurrentLine) {
+        previousCurrentLine.classList.remove('current-timestamp');
+        previousCurrentLine.style.background = '';
+    }
 
     // Find the timestamp line that's closest to but not after currentTime
     let currentLine = null;
-    for (const line of timestampLines) {
+    let currentIndex = -1;
+
+    for (let i = 0; i < timestampLines.length; i++) {
+        const line = timestampLines[i];
         const seconds = parseInt(line.dataset.seconds);
         if (seconds <= currentTime) {
             currentLine = line;
+            currentIndex = i;
         } else {
             break;
         }
@@ -207,6 +215,22 @@ function updateCurrentTimestamp() {
     // Add current-timestamp class to the found line
     if (currentLine) {
         currentLine.classList.add('current-timestamp');
+
+        // Check if there is a next timestamp
+        if (currentIndex < timestampLines.length - 1) {
+            const nextLine = timestampLines[currentIndex + 1];
+            const currentSeconds = parseInt(currentLine.dataset.seconds);
+            const nextSeconds = parseInt(nextLine.dataset.seconds);
+
+            // Calculate progress
+            const totalDuration = nextSeconds - currentSeconds;
+            const elapsedDuration = currentTime - currentSeconds;
+            const progress = Math.min(Math.max(elapsedDuration / totalDuration, 0), 1);
+
+            // Create gradient for progress bar
+            const gradientWidth = Math.floor(progress * 100);
+            currentLine.style.background = `linear-gradient(to right, #009688 ${gradientWidth}%, rgba(0, 150, 136, 0.3) ${gradientWidth}%)`;
+        }
     }
 }
 
