@@ -39,7 +39,7 @@ async function fetchGitHubTimestamps(videoId) {
         }
 
         const data = await response.json();
-        const content = atob(data.content);
+        const content = new TextDecoder().decode(Uint8Array.from(atob(data.content), c => c.charCodeAt(0)));
         return { source: "github", data: parseMarkdownWithFrontmatter(content) };
     } catch (error) {
         console.error("Error fetching GitHub timestamps:", error);
